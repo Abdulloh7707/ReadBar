@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=PT+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Readbar</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <nav>
+        <i
+          class="fa fa-bars"
+          :class="hide ? 'none' : '' "
+          @click="none"
+          aria-hidden="true"
+        ></i>
+        <i
+          class="fa fa-times iks"
+          :class="hide ? '' : 'none' "
+          @click="none"
+          aria-hidden="true"
+        ></i>
+        <div class="logo">
+          <img src="img/logo.svg" alt="" />
+        </div>
+        <div class="menu" >
+          <ul :class="hide ? 'left': '' " id="mob">
+            <li class="li"><a href="index.html">hoem</a></li>
+            <li class="li"><a href="#about" id="">about</a></li>
+            <li class="li"><a href="#" id="">kontakt</a></li>
+            <li class="li"><a href="#booklar" id="">books</a></li>
+            <li class="li"><a href="#" id="">mybooks</a></li>
+            <li class="li janr">
+              <a href="#" class="" id=""
+                >janr
+                <ul class="down" id="down">
+                  <li><a href="">Horror</a></li>
+                  <hr />
+                  <li><a href="">Comedy</a></li>
+                  <hr />
+                  <li><a href="">Love</a></li>
+                  <hr />
+                  <li><a href="">Detective</a></li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="circles" :class="hide ? 'right': '' ">
+          <div class="circle"><a href="#" @click="next()">A</a></div>
+          <div class="circle"><a href="#">+</a></div>
+          <div class="search" :class=" show? '' : 'search-show' ">
+            <input
+              type="search"
+              placeholder="*Qidirish"
+              :class=" show? '' : 'search-show' "
+            />
+          </div>
+          <div class="circle" v-on:click="search">
+            <a href="#" style="font-size: 20px"><i class="fa fa-search"></i></a>
+          </div>
+        </div>
+      </nav>
+      <!-- <div class="carousel"> -->
+
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="./img/carousel1.png"
+              alt="First slide"/>
+            <div class="text">
+              <h1>The Best online Books1</h1>
+              <p style="white-space: pre-wrap">Readers are not always leaders but, <br> Leaders are always readers. <br> Buy our books online and become <br> a genious person.1</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="./img/carousel2.png"
+              alt="Second slide"
+            />
+            <div
+            class="text">
+            <h1>The Best online Books2</h1>
+            <p style="white-space: pre-wrap">Readers are not always leaders but,  <br> Leaders are always readers. <br> Buy our books online and become <br>  a genious person.2</p>
+          </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="./img/carousel3.png"
+              alt="Third slide"
+            />
+            <div
+            class="text">
+            <h1>The Best online Books3</h1>
+            <p style="white-space: pre-wrap">Readers are not always leaders but, <br>  Leaders are always readers. <br> Buy our books online and become  <br> a genious person.3</p>
+          </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div id="booklar" class="janrlar">
+        <h3  >Janrlar</h3>
+      </div>
+      <div class="books">
+        <span v-for="kitob in books" class="buy">
+          <div class="book">
+            <img class="clip-svg" :src="kitob.src" alt="Juda qiziq kitob" />
+            <svg width="0" height="0">
+              <defs>
+                <clipPath id="myClip">
+                  <polygon points="0,0 , 100,0 , 0,83 " />
+                  <polygon points="0,137 , 165,0 , 310,0 , 310,400 , 0,400  " />
+                </clipPath>
+              </defs>
+            </svg>
+            <h3>{{kitob.janr}}</h3>
+            <p>{{kitob.nom}}</p>
+          </div>
+          <button class="read btnn">O'qish</button>
+          <button class="order btnn">Buyurtma qilish</button>
+        </span>
+      </div>
+      <footer class="container-fluid py-5">
+        <div class="row">
+          <div class="col-12 col-md">
+            <img src="img/logo.svg"  height="50"></>
+            <small class="d-block mb-3 text-muted">© 2020</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Cool stuff</a></li>
+              <li><a class="text-muted" href="#">Random feature</a></li>
+              <li><a class="text-muted" href="#">Team feature</a></li>
+              <li><a class="text-muted" href="#">Stuff for developers</a></li>
+              <li><a class="text-muted" href="#">Another one</a></li>
+              <li><a class="text-muted" href="#">Last time</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Resource</a></li>
+              <li><a class="text-muted" href="#">Resource name</a></li>
+              <li><a class="text-muted" href="#">Another resource</a></li>
+              <li><a class="text-muted" href="#">Final resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Business</a></li>
+              <li><a class="text-muted" href="#">Education</a></li>
+              <li><a class="text-muted" href="#">Government</a></li>
+              <li><a class="text-muted" href="#">Gaming</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5 id="about">Biz haqimizda</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Jamoamiz</a></li>
+              <li><a class="text-muted" href="#">Manzil</a></li>
+              <li><a class="text-muted" href="#">Havfsizlik</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          carousel: [
+            {
+              src: "img/carousel1.png",
+              hey: 0,
+              main_text: "The Best online Books1",
+              text:
+                "Readers are not always leaders but, Leaders are always readers. \n Buy our books online and become a genious person.1",
+              btn_link: "https://kun.uz/",
+            },
+            {
+              src: "img/carousel2.png",
+              hey: 1,
+              main_text: "The Best online Books2",
+              text:
+                "Readers are not always leaders but, Leaders are always readers. \n Buy our books online and become a genious person.2",
+              btn_link: "https://www.youtube.com/",
+            },
+            {
+              src: "img/carousel3.png",
+              hey: 2,
+              main_text: "The Best online Books3",
+              text:
+                "Readers are not always leaders but, Leaders are always readers. \n Buy our books online and become a genious person.3",
+              btn_link: "https://www.tutorialsplane.com/",
+            },
+          ],
+          books: [
+            {
+              src:
+                "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-2-CRC.png",
+              janr: "Detektiv",
+              nom: "Bu yerga kitob nomi",
+            },
+            {
+              src:
+                "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-2-CRC.png",
+              janr: "Sarguzasht",
+              nom: "Bu yerga kitob nomi",
+            },
+            {
+              src:
+                "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-2-CRC.png",
+              janr: "Musiqa",
+              nom: "Bu yerga kitob nomi",
+            },
+            {
+              src:
+                "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-2-CRC.png",
+              janr: "Adabiy",
+              nom: "Bu yerga kitob nomi",
+            },
+            {
+              src:
+                "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-2-CRC.png",
+              janr: "Komputer",
+              nom: "Bu yerga kitob nomi",
+            },
+            {
+              src:
+                "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-2-CRC.png",
+              janr: "Kamediya",
+              nom: "Bu yerga kitob nomi",
+            },
+          ],
+          hey: 0,
+          show: true,
+          hide: false,
+        },
+        methods: {
+          next() {
+            this.hey = this.hey + 1;
+            if (this.hey === 3) {
+              this.hey = 0;
+            }
+          },
+          prev() {
+            this.hey = this.hey - 1;
+            if (this.hey === -1) {
+              this.hey = 2;
+            }
+            console.log("uyfed7");
+          },
+          search() {
+            this.show = !this.show;
+          },
+          none() {
+            this.hide = !this.hide;
+          },
+        },
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
